@@ -12,3 +12,6 @@
 ### 第三方登录
 
 #### Github
+
+1. 原理参考：https://www.ruanyifeng.com/blog/2019/04/github-oauth.html
+2. 通过`octocrab` 这个cargo包来处理github登录
