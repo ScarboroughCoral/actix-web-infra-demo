@@ -1,5 +1,8 @@
 # actix-web 简单功能实现记录（方便快速查阅）
 
+## 工程化
+
+- rust-toolchain 自动切换rust版本 https://stackoverflow.com/questions/58226545/how-to-switch-between-rust-toolchains
 
 ## 项目结构组织方式
 
