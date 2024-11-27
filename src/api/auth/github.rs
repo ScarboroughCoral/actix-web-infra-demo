@@ -1,9 +1,9 @@
-use std::sync::Arc;
 use crate::app_config::AppConfig;
 use actix_web::web;
 use maud::{html, Markup};
 use octocrab::Octocrab;
 use serde::Deserialize;
+use std::sync::Arc;
 
 pub fn web_config(cfg: &mut web::ServiceConfig) {
     cfg.service(web::scope("/github")
@@ -19,8 +19,8 @@ pub fn web_config(cfg: &mut web::ServiceConfig) {
             })
         }),
     )
-        .route("/callback", web::get().to(
-        |app_config: web::Data<Arc<AppConfig>>,
+        // 实际开发中直接用这个就可以，login作为前端调用的入口
+        .route("/callback", web::get().to(|app_config: web::Data<Arc<AppConfig>>,
          web::Query(params): web::Query<CallbackParams>| async move {
         let client_id = app_config.github_client_id.clone();
         let client_secret = app_config.github_client_secret.clone();
