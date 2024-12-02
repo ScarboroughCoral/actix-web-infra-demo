@@ -2,8 +2,8 @@
 
 diesel::table! {
     user_providers (id) {
-        id -> Nullable<BigInt>,
-        user_id -> BigInt,
+        id -> Nullable<Integer>,
+        user_id -> Integer,
         provider -> Text,
         provider_user_id -> Text,
         access_token -> Nullable<Text>,
@@ -16,7 +16,7 @@ diesel::table! {
 
 diesel::table! {
     users (id) {
-        id -> Nullable<BigInt>,
+        id -> Nullable<Integer>,
         email -> Nullable<Text>,
         username -> Nullable<Text>,
         avatar_url -> Nullable<Text>,

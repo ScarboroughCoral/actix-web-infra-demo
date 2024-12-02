@@ -9,6 +9,7 @@ mod api;
 mod app_config;
 mod db;
 mod models;
+pub mod schema;
 
 #[get("/")]
 async fn hello() -> impl Responder {

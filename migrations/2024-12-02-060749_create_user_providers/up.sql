@@ -1,7 +1,7 @@
 -- Your SQL goes here
 CREATE TABLE user_providers (
-                                id BIGINT AUTO_INCREMENT PRIMARY KEY,        -- 主键
-                                user_id BIGINT NOT NULL,                     -- 关联到 `users` 表的用户 ID
+                                id INTEGER PRIMARY KEY AUTOINCREMENT,        -- 主键
+                                user_id INTEGER NOT NULL,                     -- 关联到 `users` 表的用户 ID
                                 provider VARCHAR(50) NOT NULL,               -- 第三方登录平台（例如 'github'）
                                 provider_user_id VARCHAR(255) NOT NULL,      -- 第三方平台的用户唯一 ID
                                 access_token TEXT,                           -- 第三方登录返回的 access_token（可选，视需求存储）
