@@ -15,7 +15,6 @@
 ### 第三方登录
 
 #### Github
-
 1. 原理参考：https://www.ruanyifeng.com/blog/2019/04/github-oauth.html
 2. 通过`octocrab` 这个cargo包来处理github登录
 3. 流程
@@ -30,4 +29,28 @@
 
 ### diesel orm
 
-1. 接入文档：https://diesel.rs/guides/getting-started
+1. actix-web diesel sqlite example: https://github.com/actix/examples/tree/master/databases/diesel
+2. sql类型到rust类型的映射参考对应的类型实现的From/Into trait：https://docs.diesel.rs/master/diesel/sql_types/index.html
+3. 接入文档：https://diesel.rs/guides/getting-started
+
+#### 常用命令
+```shell
+diesel migration generate create_users # 通过diesel cli 创建迁移脚本
+diesel migration run # 根据迁移脚本生成数据库表
+diesel migration revert # 回滚最近一个sql操作，过个操作需要回滚多次
+```
+
+### 数据库设计
+
+1. 设计范式：https://github.com/CyC2018/CS-Notes/blob/master/notes/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86.md#%E8%8C%83%E5%BC%8F
+
+#### github 第三方登录如何设计 user 表？
+
+## actix-web 实现原理
+
+1. app.service 重载使用了魔法类型系统：https://github.com/alexpusch/rust-magic-patterns/tree/master/axum-style-magic-function-param
+
+
+## 系统架构
+
+1. 参考 system design primer：https://github.com/donnemartin/system-design-primer

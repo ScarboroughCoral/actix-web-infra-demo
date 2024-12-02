@@ -190,6 +190,7 @@ name = "actix-web-infra-demo"
 version = "0.1.0"
 dependencies = [
  "actix-web",
+ "chrono",
  "diesel",
  "dotenv",
  "maud",
@@ -534,11 +535,12 @@ version = "2.2.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "cbf9649c05e0a9dbd6d0b0b8301db5182b972d0fd02f0a7c6736cf632d7c0fd5"
 dependencies = [
- "bitflags",
- "byteorder",
+ "chrono",
  "diesel_derives",
- "itoa",
- "pq-sys",
+ "libsqlite3-sys",
+ "r2d2",
+ "time",
+ "uuid",
 ]
 
 [[package]]
@@ -1178,6 +1180,16 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "fcb4d3d38eab6c5239a362fa8bae48c03baf980a6e7079f063942d563ef3533e"
 
 [[package]]
+name = "libsqlite3-sys"
+version = "0.30.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2e99fb7a497b1e3339bc746195567ed8d3e24945ecd636e3619d20b9de9e9149"
+dependencies = [
+ "pkg-config",
+ "vcpkg",
+]
+
+[[package]]
 name = "litemap"
 version = "0.7.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1468,15 +1480,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "pq-sys"
-version = "0.6.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f6cc05d7ea95200187117196eee9edd0644424911821aeb28a18ce60ea0b8793"
-dependencies = [
- "vcpkg",
-]
-
-[[package]]
 name = "proc-macro-error"
 version = "1.0.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1515,6 +1518,17 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b5b9d34b8991d19d98081b46eacdd8eb58c6f2b201139f7c5f643cc155a633af"
 dependencies = [
  "proc-macro2",
+]
+
+[[package]]
+name = "r2d2"
+version = "0.8.10"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "51de85fb3fb6524929c8a2eb85e6b6d363de4e8c48f9e2c2eac4944abc181c93"
+dependencies = [
+ "log",
+ "parking_lot",
+ "scheduled-thread-pool",
 ]
 
 [[package]]
@@ -1678,6 +1692,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1f29ebaa345f945cec9fbbc532eb307f0fdad8161f281b6369539c8d84876b3d"
 dependencies = [
  "windows-sys 0.59.0",
+]
+
+[[package]]
+name = "scheduled-thread-pool"
+version = "0.2.7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3cbc66816425a074528352f5789333ecff06ca41b36b0b0efdfbb29edc391a19"
+dependencies = [
+ "parking_lot",
 ]
 
 [[package]]
@@ -2143,6 +2166,12 @@ name = "utf8_iter"
 version = "1.0.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b6c140620e7ffbb22c2dee59cafe6084a59b5ffc27a8859a5f0d494b5d52b6be"
+
+[[package]]
+name = "uuid"
+version = "1.11.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f8c5f0a0af699448548ad1a2fbf920fb4bee257eae39953ba95cb84891a0446a"
 
 [[package]]
 name = "vcpkg"

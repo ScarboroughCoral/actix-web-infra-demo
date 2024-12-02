@@ -10,4 +10,5 @@ maud = { version = "0.26", features = ["actix-web"] }
 octocrab = "0.42.1"
 serde = { version = "1.0.215", features = ["derive"] }
 serde_json = "1.0.133"
-diesel = { version = "2.2.0", features = ["postgres"] }
+diesel = { version = "2", features = ["sqlite", "r2d2", "uuid", "chrono"] }
+chrono = "0.4.38"

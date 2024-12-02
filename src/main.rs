@@ -7,6 +7,8 @@ use std::sync::Arc;
 
 mod api;
 mod app_config;
+mod db;
+mod models;
 
 #[get("/")]
 async fn hello() -> impl Responder {
